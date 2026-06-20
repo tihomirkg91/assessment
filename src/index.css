@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Skeleton placeholder — pulse + blur */
+.sk {
+  height: 18px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.07);
+  animation: sk-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes sk-pulse {
+  50% {
+    filter: blur(3px);
+    opacity: 0.3;
+  }
+}

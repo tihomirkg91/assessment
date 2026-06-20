@@ -1,0 +1,19 @@
+# Gitattributes — cross-platform line-ending normalization
+
+* text=auto eol=lf
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binar
+*.svg   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary
+*.otf   binary
+*.sh    text eol=lf
+
+package-lock.json -diff
+pnpm-lock.yaml -diff
+yarn.lock -diff
