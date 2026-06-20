@@ -3,6 +3,8 @@
 This project uses the **React Compiler** (`babel-plugin-react-compiler`), which automatically
 memoizes components, hooks, and values at build time.
 
+This project uses **Biome** for formatting and linting.
+
 ## Scripts
 
 npm i

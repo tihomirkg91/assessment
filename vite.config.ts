@@ -10,19 +10,26 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
     build: {
       // browser downloads smaller files in parallel instead of one giant bundle
-      rollupOptions: {
+      rolldownOptions: {
         output: {
-          manualChunks(id: string) {
-            if (
-              id.includes('node_modules/react') ||
-              id.includes('node_modules/react-dom') ||
-              id.includes('node_modules/scheduler')
-            )
-              return 'vendor-react'
-            if (id.includes('node_modules/@mui') || id.includes('node_modules/@emotion'))
-              return 'vendor-mui'
-            if (id.includes('node_modules/@tanstack')) return 'vendor-query'
-            return undefined
+          codeSplitting: {
+            groups: [
+              {
+                name: 'vendor-react',
+                test: /node_modules[\\/](react|react-dom|scheduler)/,
+                priority: 30,
+              },
+              {
+                name: 'vendor-mui',
+                test: /node_modules[\\/](@mui|@emotion)/,
+                priority: 20,
+              },
+              {
+                name: 'vendor-query',
+                test: /node_modules[\\/]@tanstack/,
+                priority: 10,
+              },
+            ],
           },
         },
       },

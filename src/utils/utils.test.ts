@@ -66,7 +66,6 @@ describe('extractBillTypes', () => {
     expect(extractBillTypes(results)).toEqual(['Private', 'Public'])
   })
 
-  it('returns fallback types when empty', () => {
-    expect(extractBillTypes([])).toEqual(['Public', 'Private', 'Hybrid', 'Committee'])
-  })
+  it('returns fallback types when empty', () =>
+    expect(extractBillTypes([])).toEqual(['Public', 'Private', 'Hybrid', 'Committee']))
 })
